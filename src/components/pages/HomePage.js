@@ -8,7 +8,6 @@ import HomeHeader from '../layout/HomeHeader';
 import Footer from '../layout/Footer';
 import AboutMeSection from '../layout/AboutMeSection';
 import HomeBreakSection from '../layout/HomeBreakSection';
-import SpotifySection from '../layout/SpotifySection';
 
 /* NAVBAR */
 const HomePage = () => {
@@ -17,7 +16,6 @@ const HomePage = () => {
             <HomeHeader/>
             <AboutMeSection/>
             <HomeBreakSection/>
-            <SpotifySection/>
             <Footer/>
         </Fragment>
     );
