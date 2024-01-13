@@ -15,7 +15,7 @@ const Footer = () => {
     const githubLink = "https://github.com/johnedquinn";
     const spotifyLink = "https://open.spotify.com/user/johnedquinn";
     const linkedinLink = "https://linkedin.com/in/johnedquinn/";
-    const emailLink = "mailto: johnedquinn@gmail.com";
+    const emailLink = "mailto:johnedquinn@gmail.com";
     return (
         <div className="col footer">
             <div className="row py-5"></div>
