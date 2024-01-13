@@ -78,12 +78,8 @@ To can access the website, in this instance, at http://localhost:8050.
 
 ## To Deploy
 
-### Docker
-
-```console
-% docker build . -t <SOME_REPO>/<SOME_IMAGE_NAME>:<SOME_TAG>
 ```
-
-## View the Product
-
-The website can be found at [https://www.johnedquinn.io](https://www.johnedquinn.io).
+export NODE_OPTIONS=--openssl-legacy-provider
+npm run predeploy
+npm run deploy
+```
