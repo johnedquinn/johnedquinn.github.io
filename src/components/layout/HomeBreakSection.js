@@ -16,7 +16,6 @@ const HomeBreakSection = () => {
 					<div className="row py-5"></div>
 					<div className="col">
 						<h1 className="text-white text-center">Take a Glimpse at my Work</h1>
-						<p className="text-white text-center">My past work ranges from developing APIs and dynamic websites to building programming languages and web servers.</p>
 						<div className="row">
 							<div className="col text-center"><a href="https://github.com/johnedquinn" rel="noopener noreferrer" target="_blank"><img className="home-icon" alt="GitHub Icon" src={Github}/></a></div>
 						</div>

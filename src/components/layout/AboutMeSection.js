@@ -19,9 +19,8 @@ const AboutMeSection = () => {
 						<h1 className="card-title text-dark">About Me</h1>
 					</div>
 					<div className="col col-10 mobile-center">
-						<p className="text-dark">My passion is building beautiful things from makefiles
-							to compilers to servers or even mobile applications. I learned about algorithms, compilers, networks, and more in school, but I do the majority of my learning on my own.</p>
-						<p className="text-dark">My personal hobbies include soccer, boxing, running, and reading.</p>
+						<p className="text-dark">I am a software engineer with a passion for compilers and databases.</p>
+            <p className="text-dark">I am currently developing <a href="https://github.com/partiql/">PartiQL</a>, the next generation of SQL, at Amazon. My expertise lies in compiler construction and databases, honed through academic pursuits at the University of Notre Dame and professional experience in Seattle.</p>
 					</div>
 				</div>
 			<div className="row py-5"></div>
