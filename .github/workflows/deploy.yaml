@@ -20,7 +20,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: v4
           fetch-depth: 0 # Fetch all history for git info
+      - run: |
+          git submodule update  --init --recursive --remote -f
       - uses: actions/setup-node@v4
         with:
           node-version: 22
