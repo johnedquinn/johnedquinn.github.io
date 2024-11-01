@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "johnedq.com",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "templates", ".obsidian", ".github"],
     defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",
