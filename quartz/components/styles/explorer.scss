@@ -3,7 +3,7 @@
 .explorer {
   display: flex;
   flex-direction: column;
-  overflow-y: hidden;
+  // overflow-y: scroll; // hidden; // USER_DEFINED
   &.desktop-only {
     @media all and not ($mobile) {
       display: flex;
