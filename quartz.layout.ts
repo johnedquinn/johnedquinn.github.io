@@ -64,7 +64,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer({ folderDefaultState: "collapsed", sortFn: byDateAndAlphabetical(), folderClickBehavior: "link" })),
+    Component.DesktopOnly(Component.Explorer({ folderDefaultState: "collapsed", sortFn: byDateAndAlphabetical() })), // TODO: Potentially make folders only links (not dropdowns)
     Component.DesktopOnly(Component.RecentNotes({ title: "Recent Posts", limit: 4 })),
   ],
   right: [
