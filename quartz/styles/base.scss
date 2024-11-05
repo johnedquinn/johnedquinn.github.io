@@ -208,6 +208,8 @@ a {
     & .sidebar.right {
       grid-area: grid-sidebar-right;
       margin-right: 0;
+      // position: sticky; // USER_DEFINED
+      // overflow-y: auto; // USER_DEFINED
       flex-direction: column;
       @media all and ($mobile) {
         margin-left: inherit;

@@ -1,6 +1,7 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import { FileNode } from "./quartz/components/ExplorerNode"
+import { SimpleSlug } from "./quartz/util/path"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -51,6 +52,17 @@ export function byDateAndAlphabetical(): (a: FileNode, b: FileNode) => number {
   }
 }
 
+export const sidebarLinks = Component.SideBarLinks(
+  {
+    optionsList: [
+      { title: "All Posts", path: "/All-Posts" as SimpleSlug },
+      { title: "Tags", path: "/Tags" as SimpleSlug },
+    ]
+  }
+);
+
+export const recentNotes = Component.DesktopOnly(Component.RecentNotes({ title: "Recent Posts", limit: 3 }));
+
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
@@ -64,13 +76,13 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer({ folderDefaultState: "collapsed", sortFn: byDateAndAlphabetical() })), // TODO: Potentially make folders only links (not dropdowns)
-    Component.DesktopOnly(Component.RecentNotes({ title: "Recent Posts", limit: 4 })),
+    sidebarLinks,
+    recentNotes,
   ],
   right: [
     Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    // Component.Backlinks(),
   ],
 }
 
@@ -82,8 +94,8 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
-    Component.DesktopOnly(Component.RecentNotes({ title: "Recent Posts", limit: 4 })),
+    sidebarLinks,
+    recentNotes,
   ],
   right: [],
 }
