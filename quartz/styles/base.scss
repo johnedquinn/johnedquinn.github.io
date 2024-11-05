@@ -185,8 +185,10 @@ a {
       padding: $topSpacing 2rem 2rem 2rem;
       display: flex;
       height: 100vh;
+      position: sticky;
+      overflow-x:hidden; // USER_DEFINED
       // position: sticky; // USER_DEFINED
-      // overflow-y: auto; // USER_DEFINED
+      overflow-y: auto; // USER_DEFINED
     }
 
     & .sidebar.left {
