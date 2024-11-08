@@ -12,8 +12,8 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       GitHub: "https://github.com/johnedquinn",
       LinkedIn: "https://www.linkedin.com/in/johnedquinn/",
+      Instagram: "https://www.instagram.com/johnedquinn/",
       Email: "mailto:lump-kinfolk.0m@icloud.com"
-      // "Discord Community": "https://discord.gg/cRFFHYye7t", // TODO: Add more links
     },
   }),
 }
@@ -56,7 +56,7 @@ export const sidebarLinks = Component.SideBarLinks(
   {
     optionsList: [
       { title: "All Posts", path: "/All-Posts" as SimpleSlug },
-      { title: "Tags", path: "/Tags" as SimpleSlug },
+      { title: "Tags", path: "/tags" as SimpleSlug },
     ]
   }
 );
