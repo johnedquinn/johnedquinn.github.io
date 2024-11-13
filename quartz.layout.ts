@@ -25,30 +25,30 @@ export const sharedPageComponents: SharedLayout = {
 export function byDateAndAlphabetical(): (a: FileNode, b: FileNode) => number {
   return (a, b) => {
 
-        // Sort order: folders first, then files. Sort folders and files alphabetically
-        if ((!a.file && !b.file) || (a.file && b.file)) {
-          // numeric: true: Whether numeric collation should be used, such that "1" < "2" < "10"
-          // sensitivity: "base": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A
-          var aDate = a.file?.dates?.created
-          var bDate = b.file?.dates?.created
-          if (aDate == undefined || bDate == undefined) {
-            return a.displayName.localeCompare(b.displayName, undefined, {
-              numeric: true,
-              sensitivity: "base",
-            })
-          }
-          if (aDate > bDate) {
-            return 1
-          } else {
-            return 1
-          }
-        }
-    
-        if (a.file && !b.file) {
-          return 1
-        } else {
-          return -1
-        }
+    // Sort order: folders first, then files. Sort folders and files alphabetically
+    if ((!a.file && !b.file) || (a.file && b.file)) {
+      // numeric: true: Whether numeric collation should be used, such that "1" < "2" < "10"
+      // sensitivity: "base": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A
+      var aDate = a.file?.dates?.created
+      var bDate = b.file?.dates?.created
+      if (aDate == undefined || bDate == undefined) {
+        return a.displayName.localeCompare(b.displayName, undefined, {
+          numeric: true,
+          sensitivity: "base",
+        })
+      }
+      if (aDate > bDate) {
+        return 1
+      } else {
+        return 1
+      }
+    }
+
+    if (a.file && !b.file) {
+      return 1
+    } else {
+      return -1
+    }
   }
 }
 
@@ -61,13 +61,13 @@ const spacer = Component.MobileOnly(Component.Spacer())
 const allPosts = Component.SideBarLink({ title: "All Posts", path: "/All-Posts" as SimpleSlug })
 const tags = Component.SideBarLink({ title: "Tags", path: "/tags" as SimpleSlug })
 var column = Component.Column(
-      [
-        profilePhoto,
-      search,
-      spacer,
-      allPosts,
-      tags
-      ]
+  [
+    profilePhoto,
+    search,
+    spacer,
+    allPosts,
+    tags
+  ]
 )
 
 column.css!! += profilePhoto.css + darkMode.css!! + search.css + allPosts.css + tags.css
