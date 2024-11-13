@@ -72,11 +72,20 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    Component.ProfilePhoto(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Darkmode(),
-    sidebarLinks,
+    Component.Column(
+      [
+      Component.ProfilePhoto(),
+      Component.MobileOnly(Component.Spacer()),
+      Component.Search(),
+      Component.MobileOnly(Component.Spacer()),
+      Component.Darkmode(),
+      Component.MobileOnly(Component.Spacer()),
+      Component.SideBarLink({ title: "All Posts", path: "/All-Posts" as SimpleSlug }),
+      Component.SideBarLink({ title: "Tags", path: "/tags" as SimpleSlug }),
+      ]
+    ),
+    // Component.Search(),
+    // Component.Darkmode(),
     recentNotes,
   ],
   right: [

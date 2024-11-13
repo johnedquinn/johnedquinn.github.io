@@ -4,5 +4,29 @@
       margin: 0 0 0 0; // 0.5rem 0 0 0;
       font-size: 1rem;
     }
-  }
-  
+    margin-top: 0; // 1rem;
+    padding-left: 0;
+    & > .section > .desc > h3 {
+      background-color: transparent;
+    }
+
+    & > .section > .desc > h3 > a {
+      background-color: transparent;
+    }
+    
+  // & > ul.sidebar-links-ul {
+  //   list-style: none;
+
+  //   & > li {
+  //     margin: 1rem 0;
+  //     .section > .desc > h3 > a {
+  //       background-color: transparent;
+  //     }
+
+  //     .section > .meta {
+  //       margin: 0; // 0 0 0.5rem 0;
+  //       opacity: 0.6;
+  //     }
+  //   }
+  // }
+}

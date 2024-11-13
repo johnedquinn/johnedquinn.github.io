@@ -21,8 +21,10 @@ import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import SideBarLinks from "./SideBarLinks"
+import SideBarLink from "./SideBarLink"
 import TableOfContentsCustom from "./TableOfContentsCustom"
 import ProfilePhoto from "./ProfilePhoto"
+import Column from "./Column"
 
 export {
   ArticleTitle,
@@ -48,6 +50,8 @@ export {
   Breadcrumbs,
   Comments,
   SideBarLinks,
+  SideBarLink,
   TableOfContentsCustom,
-  ProfilePhoto
+  ProfilePhoto,
+  Column
 }
