@@ -22,6 +22,7 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import SideBarLinks from "./SideBarLinks"
 import TableOfContentsCustom from "./TableOfContentsCustom"
+import ProfilePhoto from "./ProfilePhoto"
 
 export {
   ArticleTitle,
@@ -48,4 +49,5 @@ export {
   Comments,
   SideBarLinks,
   TableOfContentsCustom,
+  ProfilePhoto
 }
