@@ -1,21 +1,24 @@
-import { pathToRoot } from "../util/path"
+import { SimpleSlug, resolveRelative } from "../util/path"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
-import { i18n } from "../i18n"
 
 const ProfilePhoto: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzComponentProps) => {
-  // const title = cfg?.pageTitle ?? i18n(cfg.locale).propertyDefaults.title
-  // const baseDir = pathToRoot(fileData.slug!)
+  const photoPath = resolveRelative(fileData.slug!, "/assets/portrait_01.jpeg" as SimpleSlug)
   return (
-    // <img class={classNames(displayClass, "profile-photo")} src="https://avatars.githubusercontent.com/u/10103792?v=4" alt="Profile Photo" />
-    //<img src="https://avatars.githubusercontent.com/u/10103792?v=4" alt="Profile Photo" />
-    <h2>Profile photo</h2>
+    <img class={classNames(displayClass, "profile-photo")} src={photoPath} alt="Profile Photo" />
   )
 }
 
 ProfilePhoto.css = `
-img {
+.profile-photo {
   border-radius: 50%;
+  width: 200px!important;
+  height: 200px!important;
+  margin: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
 }
 `
 
