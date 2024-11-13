@@ -70,8 +70,6 @@ var column = Component.Column(
   ]
 )
 
-column.css!! += profilePhoto.css + darkMode.css!! + search.css + allPosts.css + tags.css
-
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
