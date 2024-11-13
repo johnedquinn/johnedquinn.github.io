@@ -1,0 +1,25 @@
+    .column-container {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
+    .column h3 {
+      text-align: center;
+    }
+    .column-item {
+      padding: 4px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & .search {
+        width: 90%;
+      }
+    }
+    .column button {
+      align-self: center;
+    }
+    .column {
+    width: 100%;
+    }
+    

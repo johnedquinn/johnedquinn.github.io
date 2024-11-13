@@ -52,16 +52,25 @@ export function byDateAndAlphabetical(): (a: FileNode, b: FileNode) => number {
   }
 }
 
-export const sidebarLinks = Component.SideBarLinks(
-  {
-    optionsList: [
-      { title: "All Posts", path: "/All-Posts" as SimpleSlug },
-      { title: "Tags", path: "/tags" as SimpleSlug },
-    ]
-  }
-);
-
 export const recentNotes = Component.DesktopOnly(Component.RecentNotes({ title: "Recent Posts", limit: 3 }));
+
+const profilePhoto = Component.ProfilePhoto()
+const darkMode = Component.Darkmode()
+const search = Component.Search()
+const spacer = Component.MobileOnly(Component.Spacer())
+const allPosts = Component.SideBarLink({ title: "All Posts", path: "/All-Posts" as SimpleSlug })
+const tags = Component.SideBarLink({ title: "Tags", path: "/tags" as SimpleSlug })
+var column = Component.Column(
+      [
+        profilePhoto,
+      search,
+      spacer,
+      allPosts,
+      tags
+      ]
+)
+
+column.css!! += profilePhoto.css + darkMode.css!! + search.css + allPosts.css + tags.css
 
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
@@ -72,23 +81,11 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    Component.Column(
-      [
-      Component.ProfilePhoto(),
-      Component.MobileOnly(Component.Spacer()),
-      Component.Search(),
-      Component.MobileOnly(Component.Spacer()),
-      Component.Darkmode(),
-      Component.MobileOnly(Component.Spacer()),
-      Component.SideBarLink({ title: "All Posts", path: "/All-Posts" as SimpleSlug }),
-      Component.SideBarLink({ title: "Tags", path: "/tags" as SimpleSlug }),
-      ]
-    ),
-    // Component.Search(),
-    // Component.Darkmode(),
+    column,
     recentNotes,
   ],
   right: [
+    darkMode,
     Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
   ],
@@ -96,14 +93,16 @@ export const defaultContentPageLayout: PageLayout = {
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
-  left: [
-    Component.ProfilePhoto(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Darkmode(),
-    sidebarLinks,
-    recentNotes,
+  beforeBody: [
+    Component.Breadcrumbs(),
+    Component.ArticleTitle(),
+    Component.ContentMeta()
   ],
-  right: [],
+  left: [
+    column,
+    recentNotes
+  ],
+  right: [
+    darkMode,
+  ],
 }
