@@ -5,6 +5,7 @@ export interface ColorScheme {
   darkgray: string
   dark: string
   secondary: string
+  pink: string
   tertiary: string
   highlight: string
   textHighlight: string
@@ -48,6 +49,7 @@ ${stylesheet.join("\n\n")}
   --darkgray: ${theme.colors.lightMode.darkgray};
   --dark: ${theme.colors.lightMode.dark};
   --secondary: ${theme.colors.lightMode.secondary};
+  --pink: ${theme.colors.lightMode.pink};
   --tertiary: ${theme.colors.lightMode.tertiary};
   --highlight: ${theme.colors.lightMode.highlight};
   --textHighlight: ${theme.colors.lightMode.textHighlight};
@@ -64,6 +66,7 @@ ${stylesheet.join("\n\n")}
   --darkgray: ${theme.colors.darkMode.darkgray};
   --dark: ${theme.colors.darkMode.dark};
   --secondary: ${theme.colors.darkMode.secondary};
+  --pink: ${theme.colors.lightMode.pink};
   --tertiary: ${theme.colors.darkMode.tertiary};
   --highlight: ${theme.colors.darkMode.highlight};
   --textHighlight: ${theme.colors.darkMode.textHighlight};
