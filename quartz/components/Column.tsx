@@ -17,7 +17,7 @@ export default ((component?: QuartzComponent[]) => {
   }
   Column.css = style
   component?.forEach((c) => {
-    Column.css!! += c.css
+    Column.css!! += "\n" + c.css
     const otherAfterDomLoaded = c.afterDOMLoaded
     if (otherAfterDomLoaded) {
       Column.afterDOMLoaded += ";" + otherAfterDomLoaded

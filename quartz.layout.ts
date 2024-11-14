@@ -1,4 +1,4 @@
-import { PageLayout, SharedLayout } from "./quartz/cfg"
+import { PageLayout, SharedLayout, FullPageLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import { FileNode } from "./quartz/components/ExplorerNode"
 import { SimpleSlug } from "./quartz/util/path"
@@ -6,7 +6,11 @@ import { SimpleSlug } from "./quartz/util/path"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
+  header: [
+    Component.Column(
+      [Component.Search()]
+    )
+  ],
   afterBody: [],
   footer: Component.Footer({
     links: {
@@ -56,14 +60,12 @@ export const recentNotes = Component.DesktopOnly(Component.RecentNotes({ title: 
 
 const profilePhoto = Component.ProfilePhoto()
 const darkMode = Component.Darkmode()
-const search = Component.Search()
 const spacer = Component.MobileOnly(Component.Spacer())
 const allPosts = Component.SideBarLink({ title: "All Posts", path: "/All-Posts" as SimpleSlug })
 const tags = Component.SideBarLink({ title: "Tags", path: "/tags" as SimpleSlug })
 var column = Component.Column(
   [
     profilePhoto,
-    search,
     spacer,
     allPosts,
     tags
