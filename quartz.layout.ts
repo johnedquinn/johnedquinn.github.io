@@ -86,7 +86,13 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     darkMode,
-    Component.Graph(),
+    Component.Graph({
+      localGraph: {
+        depth: 3,
+        fontSize: 0.65
+      },
+      globalGraph: {}
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
   ],
 }
