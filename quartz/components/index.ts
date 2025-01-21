@@ -25,6 +25,7 @@ import SideBarLink from "./SideBarLink"
 import TableOfContentsCustom from "./TableOfContentsCustom"
 import ProfilePhoto from "./ProfilePhoto"
 import Column from "./Column"
+import SubscribeForm from "./SubscribeForm"
 
 export {
   ArticleTitle,
@@ -53,5 +54,6 @@ export {
   SideBarLink,
   TableOfContentsCustom,
   ProfilePhoto,
-  Column
+  Column,
+  SubscribeForm,
 }

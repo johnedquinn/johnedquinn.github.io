@@ -11,7 +11,9 @@ export const sharedPageComponents: SharedLayout = {
       [Component.Search()]
     )
   ],
-  afterBody: [],
+  afterBody: [
+    Component.SubscribeForm(),
+  ],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/johnedquinn",
@@ -56,12 +58,9 @@ export function byDateAndAlphabetical(): (a: FileNode, b: FileNode) => number {
   }
 }
 
-export const recentNotes = Component.DesktopOnly(Component.RecentNotes({ title: "Recent Posts", limit: 3 }));
-
 const profilePhoto = Component.ProfilePhoto()
-const darkMode = Component.Darkmode()
 const spacer = Component.MobileOnly(Component.Spacer())
-const allPosts = Component.SideBarLink({ title: "All Posts", path: "/All-Posts" as SimpleSlug })
+const allPosts = Component.SideBarLink({ title: "Blog Posts", path: "/blog" as SimpleSlug })
 const tags = Component.SideBarLink({ title: "Tags", path: "/tags" as SimpleSlug })
 var column = Component.Column(
   [
@@ -82,10 +81,8 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     column,
-    recentNotes,
   ],
   right: [
-    darkMode,
     Component.Graph({
       localGraph: {
         depth: 3,
@@ -106,9 +103,6 @@ export const defaultListPageLayout: PageLayout = {
   ],
   left: [
     column,
-    recentNotes
   ],
-  right: [
-    darkMode,
-  ],
+  right: [],
 }
