@@ -58,13 +58,12 @@ export function byDateAndAlphabetical(): (a: FileNode, b: FileNode) => number {
   }
 }
 
-const profilePhoto = Component.ProfilePhoto()
 const spacer = Component.MobileOnly(Component.Spacer())
 const allPosts = Component.SideBarLink({ title: "Blog Posts", path: "/blog" as SimpleSlug })
 const tags = Component.SideBarLink({ title: "Tags", path: "/tags" as SimpleSlug })
 var column = Component.Column(
   [
-    profilePhoto,
+    Component.PageTitle(),
     spacer,
     allPosts,
     tags
