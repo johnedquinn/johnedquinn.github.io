@@ -22,9 +22,11 @@ const config: QuartzConfig = {
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
+      // Favorite Combo: Roboto Slab with Lora.
+      // Next: Arimo and Lora
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
+        header: "Roboto Slab",
+        body: "Lora",
         code: "IBM Plex Mono",
       },
       colors: {
