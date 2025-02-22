@@ -1,7 +1,7 @@
 import { PageLayout, SharedLayout, FullPageLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import { FileNode } from "./quartz/components/ExplorerNode"
-import { SimpleSlug } from "./quartz/util/path"
+import { SimpleSlug, RelativeUrl } from "./quartz/util/path"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -59,14 +59,14 @@ export function byDateAndAlphabetical(): (a: FileNode, b: FileNode) => number {
 }
 
 const spacer = Component.MobileOnly(Component.Spacer())
-const allPosts = Component.SideBarLink({ title: "Blog Posts", path: "/blog" as SimpleSlug })
-const tags = Component.SideBarLink({ title: "Tags", path: "/tags" as SimpleSlug })
+const home = Component.SideBarLink({ title: "Home", path: "/blog" as SimpleSlug })
+const blogHome = Component.SideBarLink({ title: "Blog", path: "https://blog.johnedq.com" as SimpleSlug })
 var column = Component.Column(
   [
     Component.PageTitle(),
     spacer,
-    allPosts,
-    tags
+    home,
+    blogHome,
   ]
 )
 
