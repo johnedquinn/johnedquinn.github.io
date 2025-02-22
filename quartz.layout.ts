@@ -12,8 +12,7 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       GitHub: "https://github.com/johnedquinn",
       LinkedIn: "https://www.linkedin.com/in/johnedquinn/",
-      Instagram: "https://www.instagram.com/johnedquinn/",
-      Email: "mailto:lump-kinfolk.0m@icloud.com"
+      Instagram: "https://www.instagram.com/johnedquinn/"
     },
   }),
 }
@@ -53,7 +52,7 @@ export function byDateAndAlphabetical(): (a: FileNode, b: FileNode) => number {
 }
 
 const spacer = Component.MobileOnly(Component.Spacer())
-const home = Component.SideBarLink({ title: "Home", path: "/blog" as SimpleSlug })
+const home = Component.SideBarLink({ title: "Home", path: "/" as SimpleSlug })
 const blogHome = Component.SideBarLink({ title: "Blog", path: "https://blog.johnedq.com" as SimpleSlug })
 var column = Component.Column(
   [
