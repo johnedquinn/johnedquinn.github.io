@@ -6,14 +6,8 @@ import { SimpleSlug, RelativeUrl } from "./quartz/util/path"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [
-    Component.Column(
-      [Component.Search()]
-    )
-  ],
-  afterBody: [
-    Component.SubscribeForm(),
-  ],
+  header: [],
+  afterBody: [],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/johnedquinn",
@@ -81,16 +75,7 @@ export const defaultContentPageLayout: PageLayout = {
   left: [
     column,
   ],
-  right: [
-    Component.Graph({
-      localGraph: {
-        depth: 3,
-        fontSize: 0.65
-      },
-      globalGraph: {}
-    }),
-    Component.DesktopOnly(Component.TableOfContents()),
-  ],
+  right: [],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
