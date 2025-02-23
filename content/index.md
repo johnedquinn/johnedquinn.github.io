@@ -11,5 +11,5 @@ I'm currently working on PartiQL ([language website](https://partiql.org), [docu
 
 Outside of my time at PartiQL, I like to mess around with whatever is on my mind. Sometimes I'm working on some software project. Sometimes I'm out backpacking, skiing, or biking. Sometimes just building something in my garage. The things I do really depend on the season, especially with how rainy/snowy it gets in the Pacific Northwest.
 
-If you'd like to reach out, feel free to send a message to: lump-kinfolk.0m @ icloud.com.
+If you'd like to reach out, feel free to send a message to: **lump-kinfolk.0m @ icloud.com**.
 
