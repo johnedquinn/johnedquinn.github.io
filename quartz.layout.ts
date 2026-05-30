@@ -53,13 +53,15 @@ export function byDateAndAlphabetical(): (a: FileNode, b: FileNode) => number {
 
 const spacer = Component.MobileOnly(Component.Spacer())
 const home = Component.SideBarLink({ title: "Home", path: "/" as SimpleSlug })
+const resume = Component.SideBarLink({ title: "Resume", path: "/resume" as SimpleSlug })
 const blogHome = Component.SideBarLink({ title: "Blog", path: "https://blog.johnedq.com" as SimpleSlug })
 var column = Component.Column(
   [
     Component.PageTitle(),
     spacer,
     home,
-    blogHome,
+    resume,
+    // blogHome,
   ]
 )
 
