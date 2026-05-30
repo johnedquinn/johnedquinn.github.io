@@ -8,6 +8,7 @@ publish: true
 [plk]: https://github.com/partiql/partiql-lang-kotlin
 [plr]: https://github.com/partiql/partiql-lang-rust
 [github]: https://github.com/johnedquinn
+[linkedin]: https://www.linkedin.com/in/johnedquinn/
 
 [pr_parser]: https://github.com/partiql/partiql-lang-kotlin/pull/711
 [pr_eval]: https://github.com/partiql/partiql-lang-kotlin/pull/1283
@@ -27,7 +28,8 @@ publish: true
 ## JOHN QUINN
 
 **Compilers and Database Engine Development**  |  **Rust, Java, Kotlin, C, C++**  
-Email: **lump-kinfolk.0m@icloud.com** | GitHub: [johnedquinn][github]
+Email: **lump-kinfolk.0m@icloud.com** | GitHub: [johnedquinn][github]  
+LinkedIn: [johnedquinn][linkedin]
 
 ## Profile
 
@@ -35,12 +37,14 @@ Compiler and database engine engineer specializing in query language implementat
 
 ## Experience
 
-### Amazon -- [PartiQL (Rust)][plr]
+### Amazon _SDE 1 (2021 -- 2023); SDE 2 (2023 -- present)_
 
-- Designed and built `PartiQLVM`, a register-based bytecode virtual machine in Rust, achieving ~20x latency improvement over the previous Rust implementation through zero-copy data analysis, a cacheable/thread-safe compiled bytecode program, and projection pushdown for non-relational data. 🔗 [v0.15.0-alpha.1][release_vm]
+#### Amazon: [PartiQL (Rust)][plr]
+
+- Designed and built `PartiQLVM`, a register-based bytecode virtual machine in Rust, achieving ~20x latency improvement over the previous Rust implementation through zero-copy data analysis, a cacheable/thread-safe compiled bytecode program, and projection pushdown for non-relational data. ([v0.15.0-alpha.1][release_vm])
 - Authored `partiql-jni`, a zero-dependency Java library wrapping `PartiQLVM` via JNI bindings; designed a `BufferedCatalog` with a custom binary encoding to minimize serialization overhead across the Java/Rust boundary, delivering a 2-3x latency improvement over partiql-lang-kotlin.
 
-### Amazon -- [PartiQL (JVM)][plk]
+#### Amazon: [PartiQL (JVM)][plk]
 
 - Led the v1.0.0 release of [partiql-lang-kotlin][plk], an open-source SQL-compatible query language powering multiple Amazon and AWS services. ([v1 Release][release_v1])
 - Architected the plan-based evaluator engine from scratch ([PR #1283][pr_eval]); implemented core relational operators including JOINs ([PR #1294][pr_joins]), aggregations, correlated subqueries, set operations, and dynamic function dispatch with type-directed optimization.
@@ -50,12 +54,9 @@ Compiler and database engine engineer specializing in query language implementat
 - Implemented window functions (`RANK`, `DENSE_RANK`, `ROW_NUMBER`, `LAG`, `LEAD`) and the `WINDOW` clause operator, enabling inter-row analytical queries and eliminating the need for CPU-intensive self-joins. ([PR #1746][pr_window], [v1.3.0 Release][release_v1_3])
 - Authored the PartiQL parser using ANTLR4: wrote the G4 lexer/grammar (~1.1K lines), implemented a parse tree visitor converting ANTLR nodes to the PartiQL AST, and resolved 6 pre-existing parser correctness bugs. ([PR #711][pr_parser])
 
+## Projects
 
-### Amazon -- Other
-
-- TODO
-
-### Self -- [Kanonic](https://github.com/johnedquinn/kanonic)
+### [Kanonic](https://github.com/johnedquinn/kanonic)
 
 - Designed and implemented a fast LR(1) parser generator for the JVM, written in Kotlin. Implements canonical LR(1) item set construction, conflict resolution, and code generation targeting the JVM — motivated by the lack of a performant JVM-native parser generator suitable for production use.
 
