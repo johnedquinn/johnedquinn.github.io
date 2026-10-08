@@ -25,6 +25,10 @@ publish: true
 [release_v1_3]: https://github.com/partiql/partiql-lang-kotlin/releases/tag/v1.3.0
 [release_vm]: https://github.com/partiql/partiql-lang-rust/releases/tag/v0.15.0-alpha.1
 
+[pr_lmdb]: https://github.com/partiql/partiql-lang-rust/pull/641
+[pr_ctas]: https://github.com/partiql/partiql-lang-rust/pull/642
+[pr_codec]: https://github.com/partiql/partiql-lang-rust/pull/644
+
 ## JOHN QUINN
 
 **Compilers and Database Engine Development**  |  **Rust, Java, Kotlin, C, C++**  
@@ -33,16 +37,17 @@ LinkedIn: [johnedquinn][linkedin]
 
 ## Profile
 
-Compiler and database engine engineer specializing in query language implementation and performance. At Amazon, designed `PartiQLVM`, a register-based bytecode VM in Rust achieving ~20x latency improvement over the prior implementation, and led the v1.0.0 release of PartiQL powering multiple production AWS services. Equally comfortable in systems languages (Rust, C, C++) and the JVM (Kotlin, Java), and drawn to work where language design, compiler theory, and performance engineering intersect.
+Compiler and database engine engineer specializing in query language implementation and performance. At Amazon, designed `PartiQLVM`, a register-based bytecode VM in Rust achieving ~20x latency improvement over the prior implementation, architected `pqlite`, an embedded LMDB-backed database built on that VM, and led the v1.0.0 release of PartiQL powering multiple production AWS services. Equally comfortable in systems languages (Rust, C, C++) and the JVM (Kotlin, Java), and drawn to work where language design, compiler theory, and performance engineering intersect.
 
 ## Experience
 
-### Amazon _SDE 1 (2021 -- 2023); SDE 2 (2023 -- present)_
+### Amazon _SDE 2 (2023 -- present); SDE 1 (2021 -- 2023)_
 
 #### Amazon: [PartiQL (Rust)][plr]
 
 - Designed and built `PartiQLVM`, a register-based bytecode virtual machine in Rust, achieving ~20x latency improvement over the previous Rust implementation through zero-copy data analysis, a cacheable/thread-safe compiled bytecode program, and projection pushdown for non-relational data. ([v0.15.0-alpha.1][release_vm])
 - Authored `partiql-jni`, a zero-dependency Java library wrapping `PartiQLVM` via JNI bindings; designed a `BufferedCatalog` with a custom binary encoding to minimize serialization overhead across the Java/Rust boundary, delivering a 2-3x latency improvement over partiql-lang-kotlin.
+- Conceived, designed, and technically directed `pqlite`, an embedded, on-disk SQL database built on `PartiQLVM`, while mentoring an engineer through implementation. Architecture spans LMDB-backed persistent storage with a versioned system catalog, transactional write paths with full rollback (`CREATE TABLE AS`, `INSERT ... SELECT`), a custom zero-allocation binary row codec, and bounded-memory streaming scans. ([PR #641][pr_lmdb], [#642][pr_ctas], [#644][pr_codec])
 
 #### Amazon: [PartiQL (JVM)][plk]
 
