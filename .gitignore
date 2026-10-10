@@ -10,3 +10,8 @@ private/
 .replit
 replit.nix
 .idea/
+
+# Generated from johnedquinn/resume-builder (see deploy workflow)
+content/resume.md
+content/resume.pdf
+.resume-builder/

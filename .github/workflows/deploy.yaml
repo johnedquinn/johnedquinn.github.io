@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - v4
+  # Sent by johnedquinn/resume-builder when the resume changes (see its notify-site workflow).
+  repository_dispatch:
+    types:
+      - resume-updated
+  workflow_dispatch:
  
 permissions:
   contents: read
@@ -29,6 +34,19 @@ jobs:
           node-version: 22
       - name: Install Dependencies
         run: npm ci
+      - name: Check out resume-builder (private)
+        uses: actions/checkout@v4
+        with:
+          repository: johnedquinn/resume-builder
+          token: ${{ secrets.PAT }}
+          path: .resume-builder
+      - name: Generate resume (Markdown page + PDF)
+        working-directory: .resume-builder
+        run: |
+          npm ci
+          npm test
+          node src/cli.mjs --variant default --format md --pdf-link /resume.pdf --out ../content/resume.md
+          node src/cli.mjs --variant default --format pdf --out ../content/resume.pdf
       - name: Build Quartz
         run: npx quartz build
       - name: Upload artifact
